@@ -17,6 +17,7 @@
         "concurrently": "^5.1.0"
     },
     "dependencies": {
-        "graphql": "^15.5.0"
+        "graphql": "^15.5.0",
+        "heroku": "^7.59.0"
     }
 }
