@@ -1,4 +1,5 @@
 import React from "react";
+import image1 from "./book-homepage-image.jpg";
 import { useQuery } from "@apollo/client";
 import { QUERY_BOOKS } from "../utils/queries";
 
@@ -11,7 +12,7 @@ const Home = () => {
       <nav className="navbar">
         <a href="https://mern-your-books.herokuapp.com/">
           <img
-            src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80"
+            src={image1}
             alt="book in front of mountain"
             style={{ width: 32, height: 32 }}
           />
