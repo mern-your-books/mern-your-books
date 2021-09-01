@@ -8,7 +8,18 @@ const Home = () => {
 
   return (
     <main>
-      <div className="flex-row justify-center">{books}</div>
+      <div className="flex-row justify-center">
+        {books &&
+          books.map((book) => (
+            <div key={book._id} className="col-12 col-xl-6">
+              <div className="card mb-3">
+                <h4 className="card-header bg-dark text-light p-2 m-0">
+                  {book.title} <br />
+                </h4>
+              </div>
+            </div>
+          ))}
+      </div>
     </main>
   );
 };
