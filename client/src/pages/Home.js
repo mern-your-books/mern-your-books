@@ -10,13 +10,16 @@ const Home = () => {
   return (
     <main>
       <nav className="navbar">
+        <h1>MERN Your Books</h1>
         <a href="https://mern-your-books.herokuapp.com/">
           <img
             src={image1}
             alt="book in front of mountain"
-            style={{ width: 32, height: 32 }}
+            style={{ width: 32 }}
           />
         </a>
+        <a href="">Logout</a>
+        <a href="">My Books</a>
       </nav>
       <div className="flex-row justify-center">
         {books &&
