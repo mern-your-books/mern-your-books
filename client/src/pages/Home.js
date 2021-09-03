@@ -2,6 +2,7 @@ import React from "react";
 import image1 from "./book-homepage-image.jpg";
 import { useQuery } from "@apollo/client";
 import { QUERY_BOOKS } from "../utils/queries";
+// import LoginPage from "../components/LoginPage/LoginPage";
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_BOOKS);
@@ -18,8 +19,8 @@ const Home = () => {
             style={{ width: 32 }}
           />
         </a>
-        <a href="">Logout</a>
-        <a href="">My Books</a>
+        <a href="https://mern-your-books.herokuapp.com/">Logout</a>
+        <a href="https://mern-your-books.herokuapp.com/">My Books</a>
       </nav>
       <div className="flex-row justify-center">
         {books &&
