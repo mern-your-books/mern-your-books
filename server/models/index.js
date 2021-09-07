@@ -1,4 +1,3 @@
-//change profiles
-// const Profile = require("./Profile");
+const User = require('./User');
 
-module.exports = { Book: require("./Book"), User: require("./User")};
+module.exports = { User };
