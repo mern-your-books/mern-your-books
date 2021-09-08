@@ -45,7 +45,7 @@ const SavedBooks = () => {
     try {
       // Execute mutation and pass in defined parameter data as variables
       const { data } = await addReview({
-        variables: {review},
+        variables: {reviewText: review},
       });
 
       window.location.reload();
