@@ -77,18 +77,17 @@ export const REMOVE_BOOK = gql`
 }
 `;
 export const ADD_REVIEW = gql`
-  mutation addReview($reviewText: String!) {
-    addReview(reviewText: $reviewText) {
+mutation addReview($reviewText: String!) {
+  addReview(reviewText: $reviewText) {
+    _id
+    reviewText
+    createdAt
+    comments {
       _id
-      reviewText
-      reviewAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-      }
+      commentText
     }
   }
+}
 `;
 
 export const ADD_COMMENT = gql`

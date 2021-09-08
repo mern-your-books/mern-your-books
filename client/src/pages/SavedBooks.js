@@ -6,13 +6,14 @@ import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 import {useMutation, useQuery} from '@apollo/react-hooks';
 import { GET_ME } from '../utils/queries';
-import { REMOVE_BOOK } from '../utils/mutations';
+import { ADD_REVIEW, REMOVE_BOOK } from '../utils/mutations';
 
 
 const SavedBooks = () => {
-
+  const [review, setReview] = useState('');
   const { loading, data} = useQuery(GET_ME);
   const [removeBook, {error}] = useMutation(REMOVE_BOOK);
+  const [addReview, { err }] = useMutation(ADD_REVIEW);
 
   const userData = data?.me || [];
 
@@ -37,6 +38,35 @@ const SavedBooks = () => {
       console.error(err);
     }
   };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      // Execute mutation and pass in defined parameter data as variables
+      const { data } = await addReview({
+        variables: {review},
+      });
+
+      window.location.reload();
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleReviewBook = async (bookID) => {
+    // const token = Auth.loggedIn() ? Auth.getToken() : null;
+    console.log(bookID);
+    // if (!token) {
+    //   return false;
+    // }
+
+    // try {
+    //   const {data} = await addReview ({
+    //     variables: {bookID}
+    //   });
+    
+  }
 
   // if data isn't here yet, say so
   if (loading) {
@@ -68,8 +98,16 @@ const SavedBooks = () => {
                   <Button className='btn-block btn-danger' onClick={() => handleDeleteBook(book.bookId)}>
                     Delete this Book!
                   </Button>
+                  <Button className='btn-block btn-light' onClick={() => handleReviewBook()}>
+                    Review This Book!
+                  </Button>
                 </Card.Body>
-              </Card>
+              <form onSubmit={handleFormSubmit}>
+                <textarea onChange={(event) => setReview(event.target.value)}></textarea>
+                <button type="submit">Add Review!</button>
+                </form>
+                </Card>
+              
             );
           })}
         </CardColumns>
