@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
+import ReviewedBooks from './ReviewedBooks';
 
 import Auth from '../utils/auth';
 
@@ -28,6 +29,9 @@ const AppNavbar = () => {
                 <>
                   <Nav.Link as={Link} to='/saved'>
                     See Your Books
+                  </Nav.Link>
+                  <Nav.Link as={Link} to='/ReviewedBooks'>
+                    Review Your Books
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
