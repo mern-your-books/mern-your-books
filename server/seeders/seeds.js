@@ -4,7 +4,7 @@ const db = require("../models");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-    "mongodb+srv://stephenson36:mojo44@cluster0.n8ie9.mongodb.net/mern_db?retryWrites=true&w=majority"
+    "mongodb+srv://stephenson36:codingBootcamp123@cluster0.n8ie9.mongodb.net/mern_db?retryWrites=true&w=majority"
 );
 
 const bookSeed = [

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
-const connectionString = `mongodb+srv://stephenson36:mojo44@cluster0.n8ie9.mongodb.net/mern_db?retryWrites=true&w=majority`;
+const connectionString = `mongodb+srv://stephenson36:codingBootcamp123@cluster0.n8ie9.mongodb.net/mern_db?retryWrites=true&w=majority`;
 
 mongoose.connect(connectionString, {
   useNewUrlParser: true,
