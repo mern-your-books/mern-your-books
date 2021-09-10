@@ -98,13 +98,13 @@ const SavedBooks = () => {
                   <Button className='btn-block btn-danger' onClick={() => handleDeleteBook(book.bookId)}>
                     Delete this Book!
                   </Button>
-                  <Button className='btn-block btn-light' onClick={() => handleReviewBook()}>
+                  {/* <Button className='btn-block btn-light' onClick={() => handleReviewBook()}>
                     Review This Book!
-                  </Button>
+                  </Button> */}
                 </Card.Body>
               <form onSubmit={handleFormSubmit}>
-                <textarea onChange={(event) => setReview(event.target.value)}></textarea>
-                <button type="submit">Add Review!</button>
+                <textarea className='btn-block' onChange={(event) => setReview(event.target.value)}></textarea>
+                <button className='btn-block btn-light' type="submit">Add Review!</button>
                 </form>
                 </Card>
               
