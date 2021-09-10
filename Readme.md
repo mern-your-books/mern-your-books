@@ -25,7 +25,7 @@ This allows the user to keep their books and their reviews in one place.
 
 ## Contributing
 
-This project was created by (alphabetical order): Rohith C., Nabiha K., Sophia S., Matt W., & Trevor W. 
+This project was created by (alphabetical order): Rohith C., Nabiha K., Sophia S., Trevor W., & Matt W.. 
 
 ## License
 
