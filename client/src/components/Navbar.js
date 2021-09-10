@@ -31,7 +31,7 @@ const AppNavbar = () => {
                     See Your Books
                   </Nav.Link>
                   <Nav.Link as={Link} to='/ReviewedBooks'>
-                    Review Your Books
+                    Reviewed Books
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
