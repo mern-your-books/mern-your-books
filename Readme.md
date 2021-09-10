@@ -11,7 +11,7 @@ The purpose of this project was to create an app that will allow users to search
 3. [Contributing](#Contributing)
 4. [License](#License)
 5. [Tests](#Tests)
-6. [Questions](#Questions)
+6. [Questions|Comments](#Questions|Comments)
 
 ## Installation
 
@@ -58,4 +58,4 @@ There are currently no tests for this project.
 
 ## Questions
 
-Reach out to the developers if you have questions about this project. 
+Reach out to the developers if you have questions about this project. Also, we would like to thank our tutors, TAs, and Instructor for helping us get through these 24-weeks. Without the guidance and support of Nicole, Katy, and Scott - we would have all failed miserably! Thank you guys a lot! 
