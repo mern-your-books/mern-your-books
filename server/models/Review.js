@@ -13,21 +13,9 @@ const reviewSchema = new Schema({
     required: true,
     trim: true,
   },
-  comments: [
-    {
-      commentText: {
-        type: String,
-        required: true,
-        minlength: 1,
-        maxlength: 280,
-      },
-      commentAuthor: {
-        type: String,
-        required: true,
-      },
-  
-    },
-  ],
+  book: {
+    type: String,
+  }
 });
 
 const Review = model('Review', reviewSchema);

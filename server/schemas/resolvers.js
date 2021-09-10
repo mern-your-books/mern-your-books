@@ -6,7 +6,12 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
 
     Query: {
-
+        reviews: async () => {
+          return await Review.find().populate("books")
+        },
+        books: async () => {
+          return await Book.find()
+        },
         //get a user by username
         me: async (parent, args, context) => {
 
@@ -82,72 +87,39 @@ const resolvers = {
 
             throw new AuthenticationError('You need to be logged in!');
         },
-        addReview: async (parent, { reviewText }, context) => {
-            if (context.user) {
+        addReview: async (parent, { reviewText, reviewAuthor, book }, context) => {
+            // if (context.user) {
               const review = await Review.create({
                 reviewText,
-                reviewAuthor: context.user.username,
-              });
-      
-              await User.findOneAndUpdate(
-                { _id: context.user._id },
-                { $addToSet: { reviews: review._id } }
-              );
-      
+                reviewAuthor,
+                book           
+        });
+        console.log(context.user._id);
+              // await Book.findOneAndUpdate(
+              //   { _id: context.book._id },
+              //   { $addToSet: { reviews: review._id } }
+              // );
+        console.log(context.user._id);
               return review;
-            }
-            throw new AuthenticationError('You need to be logged in!');
-          },
-          addComment: async (parent, { reviewId, commentText }, context) => {
-            if (context.user) {
-              return Review.findOneAndUpdate(
-                { _id: reviewId },
-                {
-                  $addToSet: {
-                    comments: { commentText, commentAuthor: context.user.username },
-                  },
-                },
-                {
-                  new: true,
-                  runValidators: true,
-                }
-              );
-            }
-            throw new AuthenticationError('You need to be logged in!');
+            // }
+            // throw new AuthenticationError('You need to be logged in!');
           },
           removeReview: async (parent, { reviewId }, context) => {
             if (context.user) {
               const review = await Review.findOneAndDelete({
                 _id: reviewId,
-                reviewAuthor: context.user.username,
+                reviewAuthor: context.user._id,
               });
       
-              await User.findOneAndUpdate(
-                { _id: context.user._id },
+              await Book.findOneAndUpdate(
+                { _id: context.book._id },
                 { $pull: { reviews: review._id } }
               );
       
               return review;
             }
             throw new AuthenticationError('You need to be logged in!');
-          },
-          removeComment: async (parent, { reviewId, commentId }, context) => {
-            if (context.user) {
-              return Review.findOneAndUpdate(
-                { _id: reviewId },
-                {
-                  $pull: {
-                    comments: {
-                      _id: commentId,
-                      commentAuthor: context.user.username,
-                    },
-                  },
-                },
-                { new: true }
-              );
-            }
-            throw new AuthenticationError('You need to be logged in!');
-          },
+          }
     }
 };
 

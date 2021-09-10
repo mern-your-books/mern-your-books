@@ -6,11 +6,11 @@ type Book {
     _id: ID!
     bookId: String
     authors: [String]
-    # authors: String
     description: String
     title: String
     image: String
     link: String
+    review: String
   }
 type User {
     _id: ID!
@@ -30,9 +30,10 @@ input savedBook {
 type Review {
   _id: ID
   reviewText: String
-  eviewAuthor: String
+  reviewAuthor: String
   createdAt: String
   comments: [Comment]!
+  book: String
 }
 
 type Comment {
@@ -43,7 +44,8 @@ type Comment {
 }
 
 type Query {
-  reviews(username: String): [Review]
+  reviews: [Review]
+  books: [Book]
   review(reviewId: ID!): Review
   me: User  
   }
@@ -52,10 +54,8 @@ type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     saveBook(input: savedBook!): User
     removeBook(bookId: ID!): User
-    addReview(reviewText: String!): Review
-    addComment(reviewId: ID!, commentText: String!): Review
+    addReview(reviewText: String!, reviewAuthor: String!, book: String): Review
     removeReview(reviewId: ID!): Review
-    removeComment(reviewId: ID!, commentId: ID!): Review
 }
 type Auth {
     token: ID!
