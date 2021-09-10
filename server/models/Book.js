@@ -29,6 +29,10 @@ const bookSchema = new Schema({
   reviews: [{
     type: Schema.Types.ObjectId,
     ref: 'Review',
+  }],
+  savedBooks: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Book',
   }]
    
 });
