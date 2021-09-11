@@ -8,7 +8,6 @@ const resolvers = {
     Query: {
         reviews: async () => {
            const reviews = await Review.find()
-           console.log("Nabiha", reviews)
            return reviews
         },
         books: async () => {
@@ -97,14 +96,9 @@ const resolvers = {
                 book           
         });
         console.log(context.user._id);
-              // await Book.findOneAndUpdate(
-              //   { _id: context.book._id },
-              //   { $addToSet: { reviews: review._id } }
-              // );
+              
         console.log(context.user._id);
               return review;
-            // }
-            // throw new AuthenticationError('You need to be logged in!');
           },
           removeReview: async (parent, { reviewId }, context) => {
             if (context.user) {

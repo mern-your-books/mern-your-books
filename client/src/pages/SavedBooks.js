@@ -56,17 +56,7 @@ const SavedBooks = () => {
   };
 
   const handleReviewBook = async (bookID) => {
-    // const token = Auth.loggedIn() ? Auth.getToken() : null;
-    console.log(bookID);
-    // if (!token) {
-    //   return false;
-    // }
-
-    // try {
-    //   const {data} = await addReview ({
-    //     variables: {bookID}
-    //   });
-    
+    console.log(bookID);    
   }
 
   // if data isn't here yet, say so
