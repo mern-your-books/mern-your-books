@@ -19,13 +19,25 @@ The deployed application requires no installation. Developers working with this 
 
 ## Usage
 
-This allows the user to keep their books and their reviews in one place. 
+This allows the user to keep their books and their reviews in one place.
 
 ![DEMO](/public/images/demo.gif)
 
+#### Here's a screenshot of the finished home page page.
+
+![Here's a screenshot of the answer alerts.](./images/screenshot_indexPage.png)
+
+#### Here's a screenshot of the finished new workout page.
+
+![Here's a screenshot of the answer alerts.](./images/screenshot_savedBooks.png)
+
+#### Here's a screenshot of the finished dashboard page.
+
+![Here's a screenshot of the answer alerts.](./images/screenshot_login.png)
+
 ## Contributing
 
-This project was created by (alphabetical order): Rohith C., Nabiha K., Sophia S., Trevor W., & Matt W.. 
+This project was created by (alphabetical order): Rohith C., Nabiha K., Sophia S., Trevor W., & Matt W..
 
 ## License
 
@@ -51,11 +63,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-
 ## Tests
 
 There are currently no tests for this project.
 
 ## Questions
 
-Reach out to the developers if you have questions about this project. Also, we would like to thank our tutors, TAs, and Instructor for helping us get through these 24-weeks. Without the guidance and support of Nicole, Katy, and Scott - we would have all failed miserably! Thank you guys a lot! 
+Reach out to the developers if you have questions about this project. Also, we would like to thank our tutors, TAs, and Instructor for helping us get through these 24-weeks. Without the guidance and support of Nicole, Katy, and Scott - we would have all failed miserably! Thank you guys a lot!
