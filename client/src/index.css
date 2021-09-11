@@ -19,3 +19,16 @@ h6 {
 .card-img-top{
   width: 10%;
 }
+
+h7 {
+  font-family: 'Rubik Mono One', sans-serif;
+}
+
+h9 {
+  font-style: italic;
+}
+
+ .reviewSection {
+  border-style: solid;
+  text-align: center;
+}

@@ -73,10 +73,10 @@ const ReviewedBooks = () => {
           {
             loading?"still loading...":reviewData.map(review => {
               return (
-                <div>
-                  <h5>{review.book}</h5>
-                  <h5>{review.reviewText}</h5>
-                  <h5>{review.reviewAuthor}</h5>
+                <div class="reviewSection">
+                  <h7>{review.book}</h7>
+                  <h8>      {review.reviewText}</h8>
+                  <h9>      -{review.reviewAuthor}</h9>
                 </div>
               )
             })
