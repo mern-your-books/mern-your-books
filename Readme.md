@@ -21,8 +21,6 @@ The deployed application requires no installation. Developers working with this 
 
 This allows the user to keep their books and their reviews in one place.
 
-![DEMO](/public/images/demo.gif)
-
 #### Here's a screenshot of the home page.
 
 ![Here's a screenshot of the answer alerts.](./images/screenshot_indexPage.png)
