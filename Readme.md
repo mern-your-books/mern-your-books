@@ -23,17 +23,17 @@ This allows the user to keep their books and their reviews in one place.
 
 ![DEMO](/public/images/demo.gif)
 
-#### Here's a screenshot of the finished home page page.
+#### Here's a screenshot of the home page.
 
 ![Here's a screenshot of the answer alerts.](./images/screenshot_indexPage.png)
 
-#### Here's a screenshot of the finished new workout page.
-
-![Here's a screenshot of the answer alerts.](./images/screenshot_savedBooks.png)
-
-#### Here's a screenshot of the finished dashboard page.
+#### Here's a screenshot of the login page.
 
 ![Here's a screenshot of the answer alerts.](./images/screenshot_login.png)
+
+#### Here's a screenshot of the saved books page.
+
+![Here's a screenshot of the answer alerts.](./images/screenshot_savedBooks.png)
 
 ## Contributing
 
