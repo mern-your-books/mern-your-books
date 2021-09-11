@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation, useQuery } from '@apollo/react-hooks';
 import { Form, Button, Alert } from 'react-bootstrap';
 
 import { ADD_REVIEW } from '../utils/mutations';
@@ -11,6 +11,8 @@ import Auth from '../utils/auth';
 
 const ReviewedBooks = () => {
   const [reviewText, setReviewText] = useState('');
+  const { loading, data} = useQuery(QUERY_REVIEWS);
+  const reviewData = data?.reviews || [];
 
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -66,48 +68,22 @@ const ReviewedBooks = () => {
     <div>
       <h3>What's on your take on this book?</h3>
 
-      {Auth.loggedIn() ? (
-        <>
-          <p
-            className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
-            }`}
-          >
-            Character Count: {characterCount}/280
-          </p>
-          <form
-            className="flex-row justify-center justify-space-between-md align-center"
-            onSubmit={handleFormSubmit}
-          >
-            <div className="col-12 col-lg-9">
-              <textarea
-                name="reviewText"
-                placeholder="Here's a new review..."
-                value={reviewText}
-                className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
-                onChange={handleChange}
-              ></textarea>
-            </div>
+      
 
-            <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Review
-              </button>
-            </div>
-            {error && (
-              <div className="col-12 my-3 bg-danger text-white p-3">
-                {error.message}
-              </div>
-            )}
-          </form>
-        </>
-      ) : (
-        <p>
-          You need to be logged in to share your review. Please{' '}
-          {/* <Link to="/login">login</Link> or <Link to="/signup">signup.</Link> */}
-        </p>
-      )}
+          {
+            loading?"still loading...":reviewData.map(review => {
+              return (
+                <div>
+                  <h5>{review.book}</h5>
+                  <h5>{review.reviewText}</h5>
+                  <h5>{review.reviewAuthor}</h5>
+                </div>
+              )
+            })
+          }
+
+
+
     </div>
   );
 };

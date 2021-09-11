@@ -31,8 +31,6 @@ type Review {
   _id: ID
   reviewText: String
   reviewAuthor: String
-  createdAt: String
-  comments: [Comment]!
   book: String
 }
 

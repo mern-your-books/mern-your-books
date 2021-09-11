@@ -37,14 +37,14 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_REVIEWS = gql`
-  query getReviews {
-    reviews {
-      _id
-      reviewText
-      reviewAuthor
-      createdAt
-    }
+query {
+  reviews{
+    _id
+    reviewText
+    reviewAuthor
+    book
   }
+}
 `;
 
 // export const QUERY_SINGLE_REVIEW = gql`

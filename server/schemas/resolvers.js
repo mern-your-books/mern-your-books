@@ -7,7 +7,9 @@ const resolvers = {
 
     Query: {
         reviews: async () => {
-          return await Review.find().populate("books")
+           const reviews = await Review.find()
+           console.log("Nabiha", reviews)
+           return reviews
         },
         books: async () => {
           return await Book.find()
@@ -91,7 +93,7 @@ const resolvers = {
             // if (context.user) {
               const review = await Review.create({
                 reviewText,
-                reviewAuthor,
+                reviewAuthor:context.user.email,
                 book           
         });
         console.log(context.user._id);

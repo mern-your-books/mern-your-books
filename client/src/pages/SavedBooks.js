@@ -11,6 +11,7 @@ import { ADD_REVIEW, REMOVE_BOOK } from '../utils/mutations';
 
 const SavedBooks = () => {
   const [review, setReview] = useState('');
+  const [bookTitle, setBookTitle] = useState('');
   const { loading, data} = useQuery(GET_ME);
   const [removeBook, {error}] = useMutation(REMOVE_BOOK);
   const [addReview, { err }] = useMutation(ADD_REVIEW);
@@ -45,7 +46,7 @@ const SavedBooks = () => {
     try {
       // Execute mutation and pass in defined parameter data as variables
       const { data } = await addReview({
-        variables: {reviewText: review},
+        variables: {reviewText: review, reviewAuthor:"", book:bookTitle},
       });
 
       window.location.reload();
@@ -103,7 +104,10 @@ const SavedBooks = () => {
                   </Button> */}
                 </Card.Body>
               <form onSubmit={handleFormSubmit}>
-                <textarea className='btn-block' onChange={(event) => setReview(event.target.value)}></textarea>
+                <textarea className='btn-block' onChange={(event) => {
+                  setReview(event.target.value)
+                  setBookTitle(book.title)
+                  }}></textarea>
                 <button className='btn-block btn-light' type="submit">Add Review!</button>
                 </form>
                 </Card>
